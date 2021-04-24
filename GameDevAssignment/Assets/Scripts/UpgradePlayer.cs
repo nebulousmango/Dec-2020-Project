@@ -14,7 +14,6 @@ public class UpgradePlayer : MonoBehaviour
     }
     public void ChangePlayer()
     {
-        Debug.Log("This is from the Upgrade script.");
         if (characterSelect == 1)
         {
             characterSelect = 2;
