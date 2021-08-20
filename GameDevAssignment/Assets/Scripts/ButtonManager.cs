@@ -2,25 +2,43 @@
 using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
-    //Adding Unity slot to set scene name to be loaded. 
-    public string S_LevelOne;
-    public string S_LevelTwo;
+    [SerializeField] private string S_LevelA;
+    [SerializeField] private string S_LevelB;
+    [SerializeField] private string S_LevelC;
+    [SerializeField] private string S_LevelD;
 
-    //Function for loading levels. 
-    public void LoadLevel1()
+    public void LoadLevelA()
     {
-        //Loads level one. 
-        SceneManager.LoadScene(S_LevelOne);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(S_LevelA);
     }
-    public void LoadLevel2()
+
+    public void LoadLevelB()
     {
-        //Loads level one. 
-        SceneManager.LoadScene(S_LevelTwo);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(S_LevelB);
     }
-    //Function for quitting game. 
+
+    public void LoadLevelC()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(S_LevelC);
+    }
+    public void LoadLevelD()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(S_LevelD);
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        FindObjectOfType<PauseMenu>().ChangePauseBool();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void QuitGame()
     {
-        //Closes application. 
         Application.Quit();
     }
 }
